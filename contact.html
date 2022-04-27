@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Contact</title>
 </head>
 <body>
     <header>
-        <img class="logo" src="src/img/jarditou_logo.jpg" alt="Logo jarditou" width="500" height="150">
-        <div class="title"><p>Tout le jardin</p> </div>  
+        <img class="logo" src="img/jarditou_logo.jpg" alt="Logo jarditou">
+        <span class="title-header">Tout le jardin</span> 
     </header>
-    <nav class="menu">
+    <nav>
         <ul>
             <li><a href="index.html" title="Vers l'accueil">Accueil</a></li>
             <li><a href="tableau.html" title="Vers le tableau">Tableau</a></li>
@@ -20,70 +20,139 @@
         </ul>
     </nav>
     
-    <img class="promotion" src="src/img/promotion.jpg" alt="Promotion sur lames de terrase">
+    <img class="promotion" src="img/promotion.jpg" alt="Promotion sur lames de terrase">
     
     <h1>Contact</h1>
     <hr>
     <br>
-    <p>* Ces zones sont obligatoires</p>
+    <p><span class="error-sign">*</span> Ces zones sont obligatoires</p>
 
-    <form action="http://bienvu.net/script.php" method="post">
-        <fieldset>
-            <legend>Vos coordonnées</legend>
-            <label for="name">Votre nom* : </label><input type="text" name="name" id="name"><br>
-            <label for="first_name">Votre prénom* : </label><input type="text" name="first_name" id="first_name">
-            <br><br>
+    <div class="form-wrapper">
+        <form action="http://bienvu.net/script.php" method="post">
+            <fieldset>
+                <legend>Vos coordonnées</legend>
+                <div class="fields-wrapper">
+                    <div class="field-wrapper">
+                        <label for="name">Votre nom<span class="error-sign">*</span> : </label>
+                        <div class="input-wrapper">
+                            <input type="text" name="name" id="name">
+                            <span class="error" id="name-error">Erreur</span>
+                        </div>
+                    </div>
+                    
+                    <div class="field-wrapper">
+                        <label for="first_name">Votre prénom<span class="error-sign">*</span> : </label>
+                        <div class="input-wrapper">
+                            <input type="text" name="first_name" id="first_name">
+                            <span class="error" id="name-error">Erreur</span>
+                        </div>
+                    </div>
+                        
+                    <div class="field-wrapper">
+                        <label>Sexe<span class="error-sign">*</span> : </label>
+                        <div class="input-wrapper">
+                            <div class="radio">
+                                <input type="radio" name="sex" id="female"><label for="female">Féminin</label>
+                                <input type="radio" name="sex" id="male"><label for="male">Masculin</label>
+                            </div>
+                                <span class="error" id="name-error">Erreur</span>
+                        </div>
+                    </div>
+        
+                    
 
-            <label>Sexe* : </label>
-            <input type="radio" name="female" id="female"><label for="female">Féminin</label>
-            <input type="radio" name="male" id="male"><label for="male">Masculin</label>
+                    <div class="field-wrapper">
+                        <label for="birth_day">Date de naissance<span class="error-sign">*</span> : </label>
+                        <div class="input-wrapper">
 
-            <br><br>
+                                <input type="date" name="birth_day" id="birth_day">                        
+                            <span class="error" id="name-error">Erreur</span>
+                        </div>
+                    </div>
 
-            <label for="birth_day">Date de naissance* : </label><input type="date" name="birth_day" id="birth_day"><br>
-            <label for="cp">Code postal* : </label><input type="number" name="cp" id="cp"><br>
-            <label for="address">Adresse : </label><input type="text" name="address" id="address"><br>
-            <label for="city">Ville : </label><input type="text" name="city" id="city"><br>
-            <label for="mail">Email* : </label><input type="email" name="mail" id="mail">
-        </fieldset>
+                    
 
-        <br>
+                    <div class="field-wrapper">
+                        <label for="cp">Code postal<span class="error-sign">*</span> : </label>
+                        <div class="input-wrapper">
+                            <input type="number" name="cp" id="cp">
+                            <span class="error" id="name-error">Erreur</span>
+                        </div>
+                    </div>
 
-        <fieldset>
-            <legend>Votre demande</legend>
-            <label for="object">Sujet*</label>
-            <select name="object" id="object">
-                <option value="" selected>Veuillez séléctionner un sujet</option>
-                <option value="commands">Mes commandes</option>
-                <option value="complaint">Réclamation</option>
-                <option value="other">Autres</option>
-            </select>
+                    
 
-            <br>
+                    <div class="field-wrapper">
+                        <label for="address">Adresse : </label>
+                        <div class="input-wrapper">
+                            <input type="text" name="address" id="address">
+                        </div>
+                    </div>
 
-            <label for="ask">Votre question* : </label><textarea name="ask" id="ask" cols="30" rows="3"></textarea>
-        </fieldset>
+                    
 
-        <br>
+                    <div class="field-wrapper">
+                        <label for="city">Ville : </label>
+                        <div class="input-wrapper">
+                            <input type="text" name="city" id="city">
+                        </div>
+                    </div>
 
-        <input type="checkbox" name="accept" id="accept"><label for="accept">* J'accepte le traitement informatique de ce formulaire</label>
-
-        <br><br>
-
-        <input type="submit" value="Envoyer"><input type="submit" value="Annuler">
-    </form>
-
+                    <div class="field-wrapper">
+                        <label for="mail">Email<span class="error-sign">*</span> : </label>
+                        <div class="input-wrapper">
+                            <input type="email" name="mail" id="mail">
+                            <span class="error" id="name-error">Erreur</span>
+                        </div>
+                    </div>                   
+                </div>
+               
+            </fieldset>
     
+            <br>
+    
+            <fieldset>
+                <legend>Votre demande</legend>
+                
+                <div class="field-wrapper">
+                    <label for="object">Sujet<span class="error-sign">*</span> : </label>
+                    <div class="input-wrapper">
+                        <select name="object" id="object">
+                            <option value="" selected>Veuillez séléctionner un sujet</option>
+                            <option value="commands">Mes commandes</option>
+                            <option value="complaint">Réclamation</option>
+                            <option value="other">Autres</option>
+                        </select>
+                        <span class="error" id="name-error">Erreur</span>
+                    </div>
+                </div>                   
+
+                <div class="field-wrapper">
+                    <label for="ask">Votre question<span class="error-sign">*</span> : </label>
+                    <div class="input-wrapper">
+                        <textarea name="ask" id="ask" cols="30" rows="3"></textarea>
+                        <span class="error" id="name-error">Erreur</span>
+                    </div>
+                </div> 
+
+                
+            </fieldset>
+    
+            <div class="field-wrapper">
+                <input type="checkbox" name="accept" id="accept">
+                <label for="accept"><span class="error-sign">*</span> J'accepte le traitement informatique de ce formulaire</label>      
+            </div> 
+            <span class="error" id="name-error">Erreur</span>  
+            <input type="button" value="Envoyer"><input type="button" value="Annuler">
+        </form>  
+    </div>  
     <footer>
         <hr>
         <nav>
             <ul>
                 <li><a href="" title="Vers le mention légales">Mention légales</a></li>
                 <li><a href="" title="Vers les horaires">Horaires</a></li>
-                <li><a href="" title="Vers le plan du site">Plan du site</a></li>
-
-
-                
+                <li><a href="" title="Vers le plan du site">Plan du site</a></li>            
             </ul>
         </nav>
     </footer>
