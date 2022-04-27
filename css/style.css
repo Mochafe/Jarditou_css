@@ -101,6 +101,8 @@ textarea {
 
 .body {
     display: flex;
+
+    text-align: center;
 }
 .article {
     min-width: 70%;
